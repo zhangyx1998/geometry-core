@@ -1,0 +1,73 @@
+{
+  "name": "geometry-core",
+  "version": "0.0.0",
+  "description": "Core geometry utilities",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "preinstall": "mkdir -p dist",
+    "prebuild": "mkdir -p dist && rm -rf dist/*",
+    "build": "run-s build:check build:rollup",
+    "build:check": "tsc --noEmit",
+    "build:rollup": "rollup --config rollup.config.ts",
+    "build:debug": "rollup --config rollup.config.ts --configDebug",
+    "postversion": "git push && git push --tags",
+    "test": "vitest run",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangyx1998/geometry-core/"
+  },
+  "keywords": [
+    "js",
+    "ts",
+    "javascript",
+    "typescript",
+    "primitive",
+    "geometry",
+    "vector",
+    "svg"
+  ],
+  "author": "Yuxuan Zhang",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/zhangyx1998/geometry-core/issues"
+  },
+  "homepage": "https://github.com/zhangyx1998/geometry-core#readme",
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "avoid"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^1.0.0",
+    "@types/node": "^25.5.0",
+    "chalk": "^5.6.2",
+    "esbuild": "^0.27.4",
+    "node-html-parser": "^7.1.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.8.1",
+    "rollup": "^4.59.0",
+    "rollup-plugin-dts": "^6.4.0",
+    "rollup-plugin-esbuild": "^6.2.1",
+    "simple-git-hooks": "^2.13.1",
+    "typescript": "^5.9.3",
+    "vitepress": "^2.0.0-alpha.17",
+    "vitest": "^4.1.0"
+  }
+}

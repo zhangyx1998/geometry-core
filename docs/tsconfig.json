@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "geometry-core": ["../src/index.ts"],
+      "geometry-core/*": ["../src/*"],
+      "util/*": ["./util/*"]
+    }
+  },
+  "include": [
+    "./**/*.ts",
+    "./**/*.vue",
+    "./.vitepress/**/*.ts",
+    "./.vitepress/**/*.vue"
+  ]
+}

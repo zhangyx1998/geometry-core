@@ -1,0 +1,11 @@
+{
+  "prettier.prettierPath": "./node_modules/prettier",
+  "editor.detectIndentation": false,
+  "editor.tabSize": 4,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json,tsconfig.json,*.config.ts,LICENSE,.*ignore,*.setup.ts",
+    "*.ts": "${capture}.test.ts"
+  },
+}
